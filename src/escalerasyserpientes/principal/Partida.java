@@ -11,6 +11,7 @@ import javax.swing.JTextField;
 
 import escalerasyserpientes.codigo.crearTabla;
 import escalerasyserpientes.principal.Tabla;
+import javax.swing.JButton;
 
 /**
  *
@@ -34,35 +35,34 @@ public class Partida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        panel = new javax.swing.JPanel();
+        TableroPrincipal = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
+        labeldad = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        panel.setPreferredSize(new java.awt.Dimension(300, 300));
+        TableroPrincipal.setPreferredSize(new java.awt.Dimension(300, 300));
 
-        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
-        panel.setLayout(panelLayout);
-        panelLayout.setHorizontalGroup(
-            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 370, Short.MAX_VALUE)
+        javax.swing.GroupLayout TableroPrincipalLayout = new javax.swing.GroupLayout(TableroPrincipal);
+        TableroPrincipal.setLayout(TableroPrincipalLayout);
+        TableroPrincipalLayout.setHorizontalGroup(
+            TableroPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
-        panelLayout.setVerticalGroup(
-            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
+        TableroPrincipalLayout.setVerticalGroup(
+            TableroPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 440, Short.MAX_VALUE)
         );
 
-        getContentPane().add(panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, 370, 340));
+        getContentPane().add(TableroPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 460, 440));
 
         jButton1.setText("Iniciar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, -1, -1));
+
+        labeldad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado1.png"))); // NOI18N
+        getContentPane().add(labeldad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/Imagenes/background2.jpg"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 760, 490));
@@ -70,67 +70,32 @@ public class Partida extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-      crearTabla creartabla = new crearTabla(panel);
-        Tabla tabla = new Tabla();
-        JTextField tablafila = tabla.getTablaFila(); 
-        JTextField tablacolumna = tabla.getTablaColumna(); 
-        
-        creartabla.crearMatriz(Integer.parseInt(tablafila.getText()),Integer.parseInt(tablacolumna.getText()));
-   
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Partida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Partida().setVisible(true);
-          
-                 
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel TableroPrincipal;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel panel;
+    private javax.swing.JLabel labeldad;
     // End of variables declaration//GEN-END:variables
 
-    public JPanel getPanel() {
-        return panel;
+
+
+    public JPanel getTableroPrincipal() {
+        return TableroPrincipal;
     }
 
-    public void setPanel(JPanel panel) {
-        this.panel = panel;
+    public JButton getjButton1() {
+        return jButton1;
     }
+
+    public JLabel getLabeldad() {
+        return labeldad;
+    }
+    
 
    
    

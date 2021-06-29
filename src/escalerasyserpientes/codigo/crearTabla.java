@@ -27,19 +27,17 @@ public class crearTabla extends Tabla {
     {
         panel.removeAll();
         matriz = new JLabel [fila][columna];
-        fila = 300/ fila;
-        columna = 300/columna;
-        
+        fila = 460/ fila;
+        columna = 440/columna;
         for (int i = 0; i< matriz.length; i++){
             for (int j = 0; j< matriz[0].length; j++){
-                
                 JLabel lbl = new JLabel("lbl"+String.valueOf(i+1)+" , "+String.valueOf(j+1));
                 lbl.setBounds(fila*i,columna*j,fila,columna);
                 matriz[i][j] = lbl ;
             
             }
-            
-            
+
+
         }
         for (int i = 0; i< matriz.length; i++){
             for (int j = 0; j< matriz[0].length; j++){

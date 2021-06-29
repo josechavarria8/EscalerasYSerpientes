@@ -6,6 +6,7 @@
 package escalerasyserpientes.principal;
 import escalerasyserpientes.codigo.crearTabla;
 import escalerasyserpientes.principal.Partida;
+import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 /**
@@ -17,8 +18,6 @@ public class Tabla extends javax.swing.JFrame {
     /**
      * Creates new form Tabla
      */
-    public int fila;
-    public int columna;
     public Tabla() {
         initComponents();
     }
@@ -91,11 +90,6 @@ public class Tabla extends javax.swing.JFrame {
         getContentPane().add(tablaColumna, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, 50, -1));
 
         crear.setText("Crear");
-        crear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                crearActionPerformed(evt);
-            }
-        });
         getContentPane().add(crear, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, -1));
 
         jLabel10.setText("Fila");
@@ -110,20 +104,6 @@ public class Tabla extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void crearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_crearActionPerformed
-        // TODO add your handling code here:
-        
-        
-       
-        
-        
-        Partida partida = new Partida ();
-            partida.setVisible(true);
-        
-          
-       
-    }//GEN-LAST:event_crearActionPerformed
-
     private void tablaFilaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tablaFilaActionPerformed
         // TODO add your handling code here:
         
@@ -132,40 +112,7 @@ public class Tabla extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tabla.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Tabla().setVisible(true);
-                
-                
-              
-            }
-        });
-    }
+   
 
    
 
@@ -186,21 +133,20 @@ public class Tabla extends javax.swing.JFrame {
     private javax.swing.JTextField tablaFila;
     // End of variables declaration//GEN-END:variables
 
-    public JTextField getTablaColumna() {
-        return tablaColumna;
+    public JButton getCrear() {
+        return crear;
     }
 
-    public void setTablaColumna(JTextField tablaColumna) {
-        this.tablaColumna = tablaColumna;
+    public JTextField getTablaColumna() {
+        return tablaColumna;
     }
 
     public JTextField getTablaFila() {
         return tablaFila;
     }
 
-    public void setTablaFila(JTextField tablaFila) {
-        this.tablaFila = tablaFila;
-    }
+  
+    
 
     
 
