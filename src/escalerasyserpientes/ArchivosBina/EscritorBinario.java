@@ -20,7 +20,7 @@ import java.util.Vector;
  */
 public class EscritorBinario {
 
-    public static final File FILE_JUGADORES = new File("C:\\Users\\alanm\\Desktop\\EscalerasYSerpientes\\src\\escalerasyserpientes\\binario");
+    public static final File FILE_JUGADORES = new File("C:\\Home\\Desktop\\EscalerasYSerpientes\\src\\escalerasyserpientes\\binario");
 
     public void guardarJugadores(Vector<Jugador> jug) throws FileNotFoundException, IOException{
         FileOutputStream fileOutput;

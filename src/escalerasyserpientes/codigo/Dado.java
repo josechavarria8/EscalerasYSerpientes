@@ -16,12 +16,12 @@ public class Dado {
         int dado1 = (int) (Math.random() * 6) + 1;
         int dado2 = (int) (Math.random() * 6) + 1;
 
-        Icon uno = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado1.png"));
-        Icon dos = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado2.png"));
-        Icon tres = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado3.png"));
-        Icon cua = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado4.png"));
-        Icon cin = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado5.png"));
-        Icon seis = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado6.png"));
+        Icon uno = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado1.jpg"));
+        Icon dos = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado2.jpg"));
+        Icon tres = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado3.jpg"));
+        Icon cua = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado4.jpg"));
+        Icon cin = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado5.jpg"));
+        Icon seis = new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado6.jpg"));
 
         switch (dado1) {
             case 1:

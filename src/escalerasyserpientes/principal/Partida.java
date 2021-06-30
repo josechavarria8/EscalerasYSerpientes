@@ -38,6 +38,9 @@ public class Partida extends javax.swing.JFrame {
         TableroPrincipal = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         labeldad = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,17 +61,58 @@ public class Partida extends javax.swing.JFrame {
 
         getContentPane().add(TableroPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 460, 440));
 
-        jButton1.setText("Iniciar");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, -1, -1));
+        jButton1.setFont(new java.awt.Font("Ubuntu", 3, 14)); // NOI18N
+        jButton1.setText("Rodar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(515, 33, 70, 40));
 
-        labeldad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado1.png"))); // NOI18N
-        getContentPane().add(labeldad, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, -1, -1));
+        labeldad.setIcon(new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/DadosI/dado1.jpg"))); // NOI18N
+        getContentPane().add(labeldad, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 80, 180, 180));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Posicion", "Nombre"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 260, 200, 200));
+
+        jButton2.setFont(new java.awt.Font("Ubuntu", 3, 14)); // NOI18N
+        jButton2.setText("Salir");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 33, 70, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/Imagenes/background2.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 0, 760, 490));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 760, 490));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+          Inicio inicio = new Inicio();
+              inicio.setVisible(true);
+                 this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,7 +122,10 @@ public class Partida extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel TableroPrincipal;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JLabel labeldad;
     // End of variables declaration//GEN-END:variables
 

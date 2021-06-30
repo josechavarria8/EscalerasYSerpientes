@@ -31,7 +31,7 @@ public class crearTabla extends Tabla {
         columna = 440/columna;
         for (int i = 0; i< matriz.length; i++){
             for (int j = 0; j< matriz[0].length; j++){
-                JLabel lbl = new JLabel("lbl"+String.valueOf(i+1)+" , "+String.valueOf(j+1));
+                JLabel lbl = new JLabel(String.valueOf(i+1)+" , "+String.valueOf(j+1));
                 lbl.setBounds(fila*i,columna*j,fila,columna);
                 matriz[i][j] = lbl ;
             
@@ -48,6 +48,9 @@ public class crearTabla extends Tabla {
             
             
         }
+        
+
+
         panel.repaint();
     }
         
