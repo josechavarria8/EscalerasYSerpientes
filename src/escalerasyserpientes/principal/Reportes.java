@@ -5,6 +5,14 @@
  */
 package escalerasyserpientes.principal;
 
+import escalerasyserpientes.codigo.Jugador;
+import java.awt.Component;
+import java.util.Vector;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author blue
@@ -27,13 +35,27 @@ public class Reportes extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Nombre", "Apellido", "Part.Jugadas", "Part.Ganadas", "Part.Perdidas"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 40, 620, 140));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/escalerasyserpientes/Imagenes/background2.jpg"))); // NOI18N
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 660, 460));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 660, 460));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -72,8 +94,57 @@ public class Reportes extends javax.swing.JFrame {
             }
         });
     }
+    public void mostrarJugadoresEnTabla(Vector<Jugador> jugadores) {
+        DefaultTableModel modelo = (DefaultTableModel) getjTable1().getModel();
+        modelo.setRowCount(0);
+        for (Jugador j : jugadores) {
+            Object[] row = new Object[5];
+            row[0] = j.getId();
+            row[1] = j.getNombre();
+            row[2] = j.getApellido();
+            row[3] = j.getPartidasJugadas();
+            row[4] = j.getPartidasGanadas();
+            row[5] = j.getPartidasPerdidas();
+            modelo.addRow(row);
+        }
+        getjTable1().setModel(modelo);
+        getjTable1().changeSelection(0, 0, false, false);
+        centrarDatosTabla(jTable1);
+        updateRowHeights(jTable1);
+        getjTable1().repaint();
+        getjTable1().revalidate();
+    }
+    public final void centrarDatosTabla(JTable t) {
+        DefaultTableCellRenderer modeloCentrar = new DefaultTableCellRenderer();
+        modeloCentrar.setHorizontalAlignment(SwingConstants.CENTER);
+        for (int i = 0; i < t.getColumnCount(); i++) {
+            t.getColumnModel().getColumn(i).setCellRenderer(modeloCentrar);
+        }
+
+    }
+    private void updateRowHeights(JTable j) {
+        try {
+            for (int row = 0; row < j.getRowCount(); row++) {
+                int rowHeight = j.getRowHeight();
+
+                for (int column = 0; column < j.getColumnCount(); column++) {
+                    Component comp = j.prepareRenderer(j.getCellRenderer(row, column), row, column);
+                    rowHeight = Math.max(rowHeight, comp.getPreferredSize().height);
+                }
+
+                j.setRowHeight(row, (rowHeight + 5));
+            }
+        } catch (ClassCastException e) {
+        }
+    }
+
+    public JTable getjTable1() {
+        return jTable1;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

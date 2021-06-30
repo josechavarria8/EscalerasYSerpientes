@@ -5,6 +5,7 @@
  */
 package escalerasyserpientes.principal;
 
+import escalerasyserpientes.codigo.ManejadorJugadores;
 import escalerasyserpientes.codigo.ManejadorPartida;
 import javax.swing.JOptionPane;
 
@@ -108,8 +109,7 @@ public class Inicio extends javax.swing.JFrame {
         
         }else if(jugadores.isSelected()){
           
-            Jugadores jugador = new Jugadores ();
-            jugador.setVisible(true);
+            ManejadorJugadores es = new ManejadorJugadores();
             this.setVisible(false);
         
         }else if(reportes.isSelected()){
